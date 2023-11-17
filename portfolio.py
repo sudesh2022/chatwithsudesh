@@ -13,6 +13,8 @@ def local_css(file_name):
         
 local_css("styles/styles_main.css")
 
+
+
 # get the variables from constants.py
 pronoun = info['Pronoun']
 
@@ -47,6 +49,16 @@ def hero(content1, content2):
 
 with st.container():
     col1,col2 = st.columns([8,3])
+
+
+hide_streamlit_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
+
 
 full_name = info['Full_Name']
 with col1:
