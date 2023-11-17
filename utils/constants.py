@@ -38,8 +38,8 @@ info = {
    "Subject": "he", 
    "Name": "Sudesh",
    "Full_Name":"Sudesh", 
-   
-   "Intro": "A Cloud Architect and AI Enthusiast at IBM Consulting",
+
+   "Intro": "I am  Cloud Architect and AI Enthusiast at IBM Consulting",
    "About":"Hello, I'm Sudesh, and I'm passionate about leveraging data and technology to drive meaningful insights and solutions in business.",
    "Project":"https://www.linkedin.com/in/ksudesh/",
    "Medium":"https://medium.com/@sudeshkrishnamoorthy/about",
