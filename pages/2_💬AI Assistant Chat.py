@@ -8,6 +8,8 @@ from ibm_watson_machine_learning.foundation_models.extensions.langchain import W
 from ibm_watson_machine_learning.foundation_models.utils.enums import ModelTypes, DecodingMethods
 from ibm_watson_machine_learning.metanames import GenTextParamsMetaNames as GenParams
 from ibm_watson_machine_learning.foundation_models import Model
+import openai
+
 
 st.title("💬 Chat with My AI Assistant")
 def local_css(file_name):
@@ -67,13 +69,9 @@ with st.spinner("Initiating the AI assistant. Please hold..."):
     llm_hub = None
     embeddings = None
 
-    #IBM_CLOUD_URL=https://us-south.ml.cloud.ibm.com
-    #IBM_CLOUD_API=T43gNlknEM6KE9QEpbpB-dDCEvl3BU8IfNfd4SvgbYDl
-    #IBM_MODEL_ID=ibm/granite-13b-instruct-v1
-    #IBM_PROJECT_ID=dca64b35-15c8-48b3-ada4-11c7825948ac
-    
-    Watsonx_API = "T43gNlknEM6KE9QEpbpB-dDCEvl3BU8IfNfd4SvgbYDl"
-    Project_id= "dca64b35-15c8-48b3-ada4-11c7825948ac"
+    WATSONX_API = st.secrets.WATSONX_API
+    PROJECT_ID = st.secrets.PROJECT_ID
+
 
     # Function to initialize the language model and its embeddings
     def init_llm():
@@ -90,7 +88,7 @@ with st.spinner("Initiating the AI assistant. Please hold..."):
         
         credentials = {
             'url': "https://us-south.ml.cloud.ibm.com",
-            'apikey' : Watsonx_API
+            'apikey' : WATSONX_API
         }
     
         model_id = ModelTypes.LLAMA_2_70B_CHAT
@@ -99,7 +97,7 @@ with st.spinner("Initiating the AI assistant. Please hold..."):
             model_id= model_id,
             credentials=credentials,
             params=params,
-            project_id=Project_id)
+            project_id=PROJECT_ID)
     
         llm_hub = WatsonxLLM(model=model)
     
