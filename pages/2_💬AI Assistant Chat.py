@@ -8,7 +8,7 @@ from ibm_watson_machine_learning.foundation_models.extensions.langchain import W
 from ibm_watson_machine_learning.foundation_models.utils.enums import ModelTypes, DecodingMethods
 from ibm_watson_machine_learning.metanames import GenTextParamsMetaNames as GenParams
 from ibm_watson_machine_learning.foundation_models import Model
-import openai
+
 
 
 st.title("💬 Chat with My AI Assistant")
